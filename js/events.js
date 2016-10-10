@@ -20,6 +20,12 @@ function fnLoadData() {
     });
 }
 
+function fnLoadEpicData() {
+    $.getJSON("mock/epicDetails.json", function(data) {
+        fnDrawLineBubbleChart(data.data);
+    });
+}
+
 
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
@@ -35,7 +41,8 @@ function fnDefineEvents() {
     });
 
     $('body').on("click", "circle", function(event) {
-        fnShowEpicDetails($(event.target).attr('id'))
+        fnShowEpicDetails($(event.target).attr('id'));
+        fnLoadEpicData();
     });
 }
 
