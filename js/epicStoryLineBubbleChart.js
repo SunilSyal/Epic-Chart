@@ -1,10 +1,10 @@
-function fnDrawEpicStoryLineBubbleChart (chartData) {
-  var release = ["Colour Swatch","Apple Pay","Gift Card","Rich Relevance","Bazzar Voice"]
+function fnDrawEpicStoryLineBubbleChart(chartData) {
+    var release = chartData.epics;
     $('#epic-story-bubble').highcharts({
         chart: {
             type: 'bubble-xtra-large',
             plotBorderWidth: 1
-            //zoomType: 'xy'
+                //zoomType: 'xy'
         },
 
         legend: {
@@ -95,7 +95,7 @@ function fnDrawEpicStoryLineBubbleChart (chartData) {
         //x - state, y - time, z - no. of stories
 
         series: [{
-            data: chartData
+            data: chartData.data
         }]
 
     });

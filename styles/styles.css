@@ -4,7 +4,8 @@
   }
   body {
     max-width: 800px;
-    margin: 10px;
+    padding: 10px;
+    margin: 0 auto;
   }
   .line {
     border-bottom: 1px solid #ccc;

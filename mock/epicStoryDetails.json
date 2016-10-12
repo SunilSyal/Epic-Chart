@@ -1,163 +1,164 @@
 {
+    "epics": ["Colour Swatchs", "Apple Pay", "Gift Card", "Rich Relevance", "Bazzar Voice"],
     "data": [{
         "x": 1,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 10
-    },{
+    }, {
         "x": 2,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 18
-    },{
+    }, {
         "x": 3,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 23
-    },{
+    }, {
         "x": 4,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 35
-    },{
+    }, {
         "x": 5,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 20
-    },{
+    }, {
         "x": 6,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 12
-    },{
+    }, {
         "x": 7,
         "y": 1,
-        "color":"orange",
+        "color": "orange",
         "z": 12
-    },{
+    }, {
         "x": 1,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 20
-    },{
+    }, {
         "x": 2,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 28
-    },{
+    }, {
         "x": 3,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 16
-    },{
+    }, {
         "x": 4,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 15
-    },{
+    }, {
         "x": 5,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 20
-    },{
+    }, {
         "x": 6,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 15
-    },{
+    }, {
         "x": 7,
         "y": 2,
-        "color":"red",
+        "color": "red",
         "z": 12
-    },{
+    }, {
         "x": 1,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 10
-    },{
+    }, {
         "x": 2,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 21
-    },{
+    }, {
         "x": 3,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 13
-    },{
+    }, {
         "x": 4,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 74
-    },{
+    }, {
         "x": 5,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 20
-    },{
+    }, {
         "x": 7,
         "y": 3,
-        "color":"blue",
+        "color": "blue",
         "z": 12
-    },{
+    }, {
         "x": 1,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 30
-    },{
+    }, {
         "x": 2,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 28
-    },{
+    }, {
         "x": 3,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 13
-    },{
+    }, {
         "x": 7,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 25
-    },{
+    }, {
         "x": 5,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 20
-    },{
+    }, {
         "x": 6,
         "y": 4,
-        "color":"black",
+        "color": "black",
         "z": 26
-    },{
+    }, {
         "x": 1,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 10
-    },{
+    }, {
         "x": 7,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 28
-    },{
+    }, {
         "x": 3,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 13
-    },{
+    }, {
         "x": 4,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 9
-    },{
+    }, {
         "x": 5,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 20
-    },{
+    }, {
         "x": 6,
         "y": 5,
-        "color":"green",
+        "color": "green",
         "z": 12
     }]
 }

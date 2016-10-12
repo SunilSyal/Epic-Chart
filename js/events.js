@@ -33,7 +33,7 @@ function fnLoadEpicStoryData() {
     $("#epic-details").hide();
     $("#epic-story-details").fadeIn(800);
     $.getJSON("mock/epicStoryDetails.json", function(data) {
-        fnDrawEpicStoryLineBubbleChart(data.data);
+        fnDrawEpicStoryLineBubbleChart(data);
     });
 }
 
