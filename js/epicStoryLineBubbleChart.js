@@ -1,8 +1,8 @@
-function fnDrawLineBubbleChart (chartData) {
-  var release = ["S1", "S2", "S3", "S4", "S5", "S6"]
-    $('#line-bubble').highcharts({
+function fnDrawEpicStoryLineBubbleChart (chartData) {
+  var release = ["Colour Swatch","Apple Pay","Gift Card","Rich Relevance","Bazzar Voice"]
+    $('#epic-story-bubble').highcharts({
         chart: {
-            type: 'bubble-large',
+            type: 'bubble-xtra-large',
             plotBorderWidth: 1
             //zoomType: 'xy'
         },
@@ -48,12 +48,15 @@ function fnDrawLineBubbleChart (chartData) {
 
         yAxis: {
             startOnTick: false,
+            tickInterval: 1,
             endOnTick: false,
             title: {
                 text: 'Story count'
             },
             labels: {
-                format: '{value}'
+                formatter: function() {
+                    return release[this.value - 1]
+                }
             },
             maxPadding: 0.2,
             plotLines: [{

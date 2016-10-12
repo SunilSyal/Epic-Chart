@@ -13,15 +13,27 @@
 <body>
   <div id="container" class="container chart"></div>
 
-  <div class="legends">
-    <p><span>R1 - Realise</span>
-      <span>R2 - Reveal</span>
-      <span>R3 - Roll</span>
-      <span>R4 - Realise</span>
-      <span>R5 - Release</P>
+  <div class="epic-link">
+    <p>Click here to see <span>Epic - Story Level View</span>
   </div>
 
-  <div id="epic-details" class="container">
+  <div id="epic-story-details" class="container epic-details">
+    <div class="epic-details__title-holder">
+      <p class="epic-details__title">Where are stories placed:</p>
+    </div>
+    <div class="legends legends-left">
+      <p><span>S1 - Analysis</span>
+        <span>S2 - Development</span>
+        <span>S3 - Pulp</span>
+        <span>S4 - SIT</span>
+        <span>S5 - Rejected</span>
+        <span>S6 - Reopned</span>
+        <span>S7 - Ready for Prod</P>
+    </div>
+    <div id="epic-story-bubble" class="container chart bubble-chart bubble-chart-medium"></div>
+  </div>
+
+  <div id="epic-details" class="container epic-details">
     <div class="epic-details__title-holder">
       <p class="epic-details__title-text"></p>
     </div>
@@ -31,10 +43,11 @@
     <div class="legends legends-left">
       <p><span>S1 - Analysis</span>
         <span>S2 - Development</span>
-        <span>S3 - Ready for Testing</span>
+        <span>S3 - Pulp</span>
         <span>S4 - SIT</span>
-        <span>S5 - UAT</span>
-        <span>S6 - Prod</P>
+        <span>S5 - Rejected</span>
+        <span>S6 - Reopned</span>
+        <span>S7 - Ready for Prod</P>
     </div>
 
     <div class="line"></div>
@@ -61,6 +74,7 @@
   </div>
   <script src="js/events.js"></script>
   <script src="js/lineBubbleChart.js"></script>
+  <script src="js/epicStoryLineBubbleChart.js"></script>
 </body>
 
 </html>

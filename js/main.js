@@ -1,11 +1,11 @@
-function fnDrawChart () {
-  var release = ["R1", "R2", "R3", "R4", "R5"]
+function fnDrawChart() {
+    var release = ["Realize", "R2", "R3", "R4", "R5"]
     $('#container').highcharts({
 
         chart: {
             type: 'bubble',
             plotBorderWidth: 1
-            //zoomType: 'xy'
+                //zoomType: 'xy'
         },
 
         legend: {
@@ -24,10 +24,12 @@ function fnDrawChart () {
             gridLineWidth: 1,
             tickInterval: 1,
             title: {
-                text: 'Current State (R)'
+                text: 'Epic State'
             },
             labels: {
-                format: 'R {value}'
+                formatter: function() {
+                    return release[this.value - 1]
+                }
             },
             plotLines: [{
                 color: 'black',
