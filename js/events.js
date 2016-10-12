@@ -20,6 +20,13 @@ function fnLoadData() {
     });
 }
 
+function fnLoadEpicData() {
+    $.getJSON("mock/epicDetails.json", function(data) {
+        fnDrawLineBubbleChart(data.data);
+        fnChangeTitle();
+    });
+}
+
 
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
@@ -34,8 +41,9 @@ function fnDefineEvents() {
         $(this).removeClass("darken");
     });
 
-    $('body').on("click", "circle", function(event) {
-        fnShowEpicDetails($(event.target).attr('id'))
+    $('body').on("click", "#container circle", function(event) {
+        fnShowEpicDetails($(event.target).attr('id'));
+        fnLoadEpicData();
     });
 }
 
@@ -44,6 +52,10 @@ function fnAddId(objRef) {
     for (var i = 0; i < len; i++) {
         window.chartData[i].id = "id_" + i;
     }
+}
+
+function fnChangeTitle() {
+  $("#epic-details .highcharts-yaxis-labels tspan").html("Story Count");
 }
 
 function fnShowEpicDetails(id) {

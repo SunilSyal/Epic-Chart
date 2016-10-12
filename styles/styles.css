@@ -2,12 +2,20 @@
     font-family: Helvetica, sans-serif;
     font-weight: lighter;
   }
+
+  .line {
+    border-bottom: 1px solid #ccc;
+  }
   .legends {
     text-align: center;
     font-size: 10px;
     margin-bottom: 10px;
   }
 
+  .legends-left {
+    text-align: left;
+    margin-left: 20px;
+  }
   path {
     stroke: #dadada;
   }
@@ -22,6 +30,14 @@
     min-width: 310px;
     max-width: 800px;
     margin: 0 auto;
+  }
+  .bubble-chart {
+    height: 100px;
+    width: 100px;
+  }
+
+  .bubble-chart path {
+    display: none;
   }
   .highcharts-xaxis-grid, .highcharts-yaxis-grid {
     display: none;
@@ -43,6 +59,10 @@
     border: 1px solid #ccc;
     color: #565656;
   }
+  .tooltip-noborder {
+    margin-left: 5px;
+  }
+
   .tooltip p {
     margin-top: 0;
     padding: 0 10px;
@@ -57,6 +77,12 @@
     /* background: #009688; */
     margin-right: 5px;
   }
+
+  .tooltip-noborder .tooltip-stories {
+     margin-top: 10px;
+     margin-left: 4px;
+  }
+
   .tooltip .tooltip-heading {
     font-size: 14;
     color: white;
@@ -68,9 +94,30 @@
     text-overflow: ellipsis;
     max-width: 200px;
   }
+
   #epic-details {
     display: none;
   }
+
+  #line-bubble {
+    margin: 0;
+  }
+
+  #epic-details .highcharts-yaxis {
+    display: none;
+  }
+
+
+  #epic-details .highcharts-container {
+    z-index: -10;
+    background: none;
+  }
+
+  #epic-details .highcharts-background,
+  #epic-details .highcharts-plot-border{
+     display: none;
+  }
+
   .epic-details__title-holder {
     background: #009688;
     padding: 10px;

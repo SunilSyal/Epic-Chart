@@ -15,16 +15,29 @@
 
   <div class="legends">
     <p><span>R1 - Realise</span>
-      <span>R2 - Realise</span>
-      <span>R3 - Realise</span>
+      <span>R2 - Reveal</span>
+      <span>R3 - Roll</span>
       <span>R4 - Realise</span>
-      <span>R5 - Realise</P>
+      <span>R5 - Release</P>
   </div>
 
   <div id="epic-details" class="container">
     <div class="epic-details__title-holder">
       <p class="epic-details__title-text"></p>
     </div>
+
+    <div id="line-bubble" class="container chart bubble-chart"></div>
+
+    <div class="legends legends-left">
+      <p><span>S1 - Analysis</span>
+        <span>S2 - Development</span>
+        <span>S3 - Ready for Testing</span>
+        <span>S4 - SIT</span>
+        <span>S5 - UAT</span>
+        <span>S6 - Prod</P>
+    </div>
+
+    <div class="line"></div>
 
     <div class="epic-details__holder">
       <p>Stories count: <span class="epic-details__stories-count"></span></p>
@@ -47,6 +60,7 @@
 
   </div>
   <script src="js/events.js"></script>
+  <script src="js/lineBubbleChart.js"></script>
 </body>
 
 </html>
