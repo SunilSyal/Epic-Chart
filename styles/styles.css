@@ -2,7 +2,10 @@
     font-family: Helvetica, sans-serif;
     font-weight: lighter;
   }
-
+  body {
+    max-width: 800px;
+    margin: 10px;
+  }
   .line {
     border-bottom: 1px solid #ccc;
   }
@@ -11,13 +14,25 @@
     font-size: 10px;
     margin-bottom: 10px;
   }
-
   .legends-left {
     text-align: left;
     margin-left: 20px;
   }
   path {
     stroke: #dadada;
+  }
+  .epic-link {
+    cursor: pointer;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 12px;
+  }
+
+  .epic-link span{
+    font-weight: bold;
+  }
+  #epic-story-details {
+    display: none;
   }
   .legends span {
     margin-right: 10px;
@@ -33,11 +48,14 @@
   }
   .bubble-chart {
     height: 100px;
-    width: 100px;
   }
-
+  .bubble-chart-medium {
+    height: 250px;
+    max-width: 400px;
+    margin: 0;
+  }
   .bubble-chart path {
-    display: none;
+
   }
   .highcharts-xaxis-grid, .highcharts-yaxis-grid {
     display: none;
@@ -60,9 +78,8 @@
     color: #565656;
   }
   .tooltip-noborder {
-    margin-left: 5px;
+    margin-left: 0px;
   }
-
   .tooltip p {
     margin-top: 0;
     padding: 0 10px;
@@ -77,12 +94,10 @@
     /* background: #009688; */
     margin-right: 5px;
   }
-
   .tooltip-noborder .tooltip-stories {
-     margin-top: 10px;
-     margin-left: 4px;
+    margin-top: 10px;
+    margin-left: 4px;
   }
-
   .tooltip .tooltip-heading {
     font-size: 14;
     color: white;
@@ -94,40 +109,38 @@
     text-overflow: ellipsis;
     max-width: 200px;
   }
-
   #epic-details {
     display: none;
   }
-
   #line-bubble {
     margin: 0;
   }
-
-  #epic-details .highcharts-yaxis {
+  .epic-details .highcharts-yaxis {
     display: none;
   }
-
-
-  #epic-details .highcharts-container {
+  .epic-details .highcharts-container {
     z-index: -10;
     background: none;
   }
-
-  #epic-details .highcharts-background,
-  #epic-details .highcharts-plot-border{
-     display: none;
+  .epic-details .highcharts-background, .epic-details .highcharts-plot-border {
+    display: none;
   }
-
   .epic-details__title-holder {
     background: #009688;
     padding: 10px;
     border-radius: 5px;
     color: white;
   }
-  .epic-details__title-text {
+
+  .epic-story-details .epic-details__title-holder {
+    background: #008696;
+  }
+
+  .epic-details__title-text, .epic-details__title {
     line-height: 24px;
     font-family: Helvetica, sans-serif;
   }
+
   .epic-details__title-holder p {
     margin: 0;
   }

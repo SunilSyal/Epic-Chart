@@ -21,12 +21,21 @@ function fnLoadData() {
 }
 
 function fnLoadEpicData() {
+  $("#epic-story-details").hide();
+  $("#epic-details").fadeIn(800);
     $.getJSON("mock/epicDetails.json", function(data) {
         fnDrawLineBubbleChart(data.data);
         fnChangeTitle();
     });
 }
 
+function fnLoadEpicStoryData() {
+    $("#epic-details").hide();
+    $("#epic-story-details").fadeIn(800);
+    $.getJSON("mock/epicStoryDetails.json", function(data) {
+        fnDrawEpicStoryLineBubbleChart(data.data);
+    });
+}
 
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
@@ -45,6 +54,13 @@ function fnDefineEvents() {
         fnShowEpicDetails($(event.target).attr('id'));
         fnLoadEpicData();
     });
+
+    $('.epic-link').on("click", function(event) {
+        //fnShowEpicStoryDetails($(event.target).attr('id'));
+        fnLoadEpicStoryData();
+    });
+
+    $('.epic-link').click();
 }
 
 function fnAddId(objRef) {
