@@ -1,5 +1,5 @@
 function fnDrawChart() {
-    var release = ["Realize", "R2", "R3", "R4", "R5"]
+    var release = ["Realize", "Reveal", "Roll", "R4", "Release"]
     $('#container').highcharts({
 
         chart: {
