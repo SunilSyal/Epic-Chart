@@ -50,7 +50,7 @@ function fnDrawChart () {
             startOnTick: false,
             endOnTick: false,
             title: {
-                text: 'Time'
+                text: 'Time (Days)'
             },
             labels: {
                 format: '{value}'

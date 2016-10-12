@@ -1,9 +1,8 @@
 function fnDrawLineBubbleChart (chartData) {
-  var release = ["R1", "R2", "R3", "R4", "R5"]
+  var release = ["S1", "S2", "S3", "S4", "S5", "S6"]
     $('#line-bubble').highcharts({
-
         chart: {
-            type: 'bubble',
+            type: 'bubble-large',
             plotBorderWidth: 1
             //zoomType: 'xy'
         },
@@ -13,21 +12,21 @@ function fnDrawLineBubbleChart (chartData) {
         },
 
         title: {
-            text: 'EPIC Timeline View'
+            text: ''
         },
 
         subtitle: {
-            text: 'Source: JIRA'
+            text: ''
         },
 
         xAxis: {
             gridLineWidth: 1,
             tickInterval: 1,
             title: {
-                text: 'Current State (R)'
+                text: ''
             },
             labels: {
-                format: 'R {value}'
+                format: 'S {value}'
             },
             plotLines: [{
                 color: 'black',
@@ -50,7 +49,7 @@ function fnDrawLineBubbleChart (chartData) {
             startOnTick: false,
             endOnTick: false,
             title: {
-                text: 'Time'
+                text: 'Story count'
             },
             labels: {
                 format: '{value}'
@@ -75,8 +74,8 @@ function fnDrawLineBubbleChart (chartData) {
 
         tooltip: {
             useHTML: true,
-            headerFormat: '<div class="tooltip">',
-            pointFormat: window.tooltipTemplate,
+            headerFormat: '<div class="tooltip tooltip-noborder">',
+            pointFormat: '<p class="tooltip-stories"><span>{point.z}</span></p>',
             footerFormat: '</div>',
             followPointer: false
         },
