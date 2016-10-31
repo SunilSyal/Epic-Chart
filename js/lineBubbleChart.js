@@ -20,7 +20,7 @@ function fnDrawLineBubbleChart (chartData) {
         },
 
         xAxis: {
-            opposite: true,
+            opposite: false,
             gridLineWidth: 1,
             tickInterval: 1,
             title: {

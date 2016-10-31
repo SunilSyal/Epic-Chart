@@ -27,6 +27,7 @@
     margin-right: 10px;
     text-align: right;
     font-size: 12px;
+    display: none;
   }
 
   .epic-link span{
@@ -51,9 +52,10 @@
     height: 100px;
   }
   .bubble-chart-medium {
-    height: 250px;
+    height: 700px;
     max-width: 400px;
     margin: 0;
+    margin-top: -100px;
   }
   .bubble-chart path {
 
@@ -63,6 +65,10 @@
   }
   circle {
     opacity: 0.2;
+  }
+
+  #epic-story-bubble circle {
+    opacity: .8;
   }
   .lighten {
     opacity: 0.2

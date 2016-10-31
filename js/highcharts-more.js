@@ -2609,7 +2609,7 @@
                 }
             },
             minSize: 8,
-            maxSize: '15%', // Bubble radius customized
+            maxSize: '9%', // Bubble radius customized
             // negativeColor: null,
             // sizeBy: 'area'
             softThreshold: false,
