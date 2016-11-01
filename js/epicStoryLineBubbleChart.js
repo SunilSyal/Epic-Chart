@@ -1,6 +1,7 @@
 function fnDrawEpicStoryLineBubbleChart(chartData) {
     var release = chartData.epics;
     $('#epic-story-bubble').highcharts({
+
         chart: {
             type: 'bubble-xtra-large',
             plotBorderWidth: 1
@@ -20,7 +21,7 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
         },
 
         xAxis: {
-            opposite: false,
+            opposite: true,
             gridLineWidth: 1,
             tickInterval: 1,
             title: {
@@ -47,6 +48,7 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
         },
 
         yAxis: {
+            reversed: true,
             startOnTick: false,
             tickInterval: 1,
             endOnTick: false,
