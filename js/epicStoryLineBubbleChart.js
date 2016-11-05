@@ -1,5 +1,8 @@
 function fnDrawEpicStoryLineBubbleChart(chartData) {
     var release = chartData.epics;
+    var names = ["Analysis", "Development", "Pulp", "SIT", "Rejected", "Reopned", "Ready"]
+
+    $('.bubble-chart-medium').height('1200px')
     $('#epic-story-bubble').highcharts({
 
         chart: {
@@ -24,11 +27,14 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
             opposite: true,
             gridLineWidth: 1,
             tickInterval: 1,
+            gridLineDashStyle: 'ShortDot',
             title: {
                 text: ''
             },
             labels: {
-                format: 'S {value}'
+              formatter: function() {
+                  return names[this.value]
+              }
             },
             plotLines: [{
                 color: 'black',
@@ -52,6 +58,7 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
             startOnTick: false,
             tickInterval: 1,
             endOnTick: false,
+            gridLineDashStyle: 'ShortDot',
             title: {
                 text: 'Story count'
             },

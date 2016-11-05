@@ -14,6 +14,7 @@
     text-align: center;
     font-size: 10px;
     margin-bottom: 10px;
+    display: none;
   }
   .legends-left {
     text-align: left;
@@ -53,25 +54,25 @@
   }
   .bubble-chart-medium {
     height: 700px;
-    max-width: 400px;
+    max-width: 800px;
     margin: 0;
     /*margin-top: -100px;*/
   }
   .bubble-chart path {
 
   }
-  .highcharts-xaxis-grid {
+  #epic-story-bubble .highcharts-xaxis-grid {
     display: none;
   }
 
   .highcharts-yaxis-grid {
-    opacity: 0.5;
+
   }
 
   #epic-story-bubble .highcharts-yaxis-grid {
-    display: none;
+
   }
-  
+
   circle {
     opacity: 0.2;
   }
