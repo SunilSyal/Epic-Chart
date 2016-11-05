@@ -15,8 +15,8 @@ function fnDefineTemplates() {
 }
 
 function fnLoadData() {
-    $.getJSON("mock/epic.json", function(data) {
-    //  $.getJSON("http://a11y.devops.mnscorp.net/epictracker/epics", function(data) {
+    //$.getJSON("mock/epic.json", function(data) {
+      $.getJSON("https://msepictracker.herokuapp.com/epictracker/epics", function(data) {
         console.log('-----', data)
         window.chartData = data.data;
         fnAddId(window.chartData);
@@ -36,8 +36,8 @@ function fnLoadEpicData() {
 function fnLoadEpicStoryData() {
     $("#epic-details").hide();
     $("#epic-story-details").fadeIn(800);
-    //$.getJSON("http://a11y.devops.mnscorp.net/epictracker/stories", function(data) {
-    $.getJSON("mock/epicStoryDetails.json", function(data) {
+    $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
+    //$.getJSON("mock/epicStoryDetails.json", function(data) {
       console.log(data)
         fnDrawEpicStoryLineBubbleChart(data);
     });

@@ -1,6 +1,7 @@
 {
-    "data": [{
-        "x": 1,
+    "data": [
+    {
+        "x": 1.6,
         "y": 4,
         "z": 15,
         "url": "https://jira.devops.mnscorp.net/browse/FEB-14",

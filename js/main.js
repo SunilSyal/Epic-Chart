@@ -23,6 +23,8 @@ function fnDrawChart() {
         xAxis: {
             gridLineWidth: 1,
             tickInterval: 1,
+            startOnTick: true,
+            gridLineDashStyle: 'ShortDot',
             title: {
                 text: 'Epic State'
             },
@@ -51,6 +53,7 @@ function fnDrawChart() {
         yAxis: {
             startOnTick: false,
             endOnTick: false,
+            gridLineDashStyle: 'ShortDot',
             title: {
                 text: 'Time (Days)'
             },
