@@ -36,13 +36,16 @@ function fnLoadEpicData() {
 function fnLoadEpicStoryData() {
     $("#epic-details").hide();
     $("#epic-story-details").fadeIn(800);
-    $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
-    //$.getJSON("mock/epicStoryDetails.json", function(data) {
-      console.log(data)
-        fnDrawEpicStoryLineBubbleChart(data);
-    });
+    setTimeout(dealyedLoad, 3000);
 }
 
+function dealyedLoad () {
+  $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
+  //$.getJSON("mock/epicStoryDetails.json", function(data) {
+    console.log(data)
+      fnDrawEpicStoryLineBubbleChart(data);
+  });
+}
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
         $('circle').removeClass("darken");
