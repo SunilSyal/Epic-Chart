@@ -1,6 +1,6 @@
 fnInit();
 
-var epics = ["Apple Pay - Web","Memory Upgrade - Inventory Grid (Peak Prep)  ","Endeca  as independent component","ANOTHER DUMMY","Apple Pay - Native","Sprint-2_Release Level Activities","Search API V2","DUMMY STORY FOR TESTING","Product V2 Changes","64 bit Upgrade","Technical Debt","Emptying Basket  (Peak Prep)","MPulse Performance tracking","Wine Sub Grooming","Wine Club","CFTO Search Enhancements","Site Responsive","Technical Debt","Generic Functional Scope","Technical Debt","STABILISE: Peak Optimisations","Tech Debts","Gated Priority Access","Technical Debt Backlog","Checkout Simplificatio- Mobile","SEO Stories","Spotlights on .com","ApplePay Native ","API-Content Preview time machine","EPIC : M2M","Delivery Actions","Checkout Simplification - Express Checkout","AEM content within Sparks Hub","Order Calculate(Pre Peak)","Peak Prep","Email Preferences for Sparks","Sparks","Remove Keyhole","C&P | SIMPLIFY | Retain in Express Checkout","Gift Card Balance Journey","Simplified Checkout - Express Checkout","API- numbered cakes feature in Cart API","Memory Upgrade - Dyna cache Grid (Peak Prep)","CFTO Support","ApplePay Spy Glass"];
+var epics = ["Apple Pay - Web", "Memory Upgrade - Inventory Grid (Peak Prep)  ", "Endeca  as independent component", "ANOTHER DUMMY", "Apple Pay - Native", "Sprint-2_Release Level Activities", "Search API V2", "DUMMY STORY FOR TESTING", "Product V2 Changes", "64 bit Upgrade", "Technical Debt", "Emptying Basket  (Peak Prep)", "MPulse Performance tracking", "Wine Sub Grooming", "Wine Club", "CFTO Search Enhancements", "Site Responsive", "Technical Debt", "Generic Functional Scope", "Technical Debt", "STABILISE: Peak Optimisations", "Tech Debts", "Gated Priority Access", "Technical Debt Backlog", "Checkout Simplificatio- Mobile", "SEO Stories", "Spotlights on .com", "ApplePay Native ", "API-Content Preview time machine", "EPIC : M2M", "Delivery Actions", "Checkout Simplification - Express Checkout", "AEM content within Sparks Hub", "Order Calculate(Pre Peak)", "Peak Prep", "Email Preferences for Sparks", "Sparks", "Remove Keyhole", "C&P | SIMPLIFY | Retain in Express Checkout", "Gift Card Balance Journey", "Simplified Checkout - Express Checkout", "API- numbered cakes feature in Cart API", "Memory Upgrade - Dyna cache Grid (Peak Prep)", "CFTO Support", "ApplePay Spy Glass"];
 
 function fnInit() {
     fnDefineTemplates();
@@ -16,17 +16,18 @@ function fnDefineTemplates() {
 
 function fnLoadData() {
     //$.getJSON("mock/epic.json", function(data) {
-      $.getJSON("https://msepictracker.herokuapp.com/epictracker/epics", function(data) {
-        console.log('-----', data)
-        window.chartData = data.data;
+    $.getJSON("https://msepictracker.herokuapp.com/epictracker/epics", function(data) {
+        console.log('-----', data);
+
+        window.chartData = filterData(data.data);
         fnAddId(window.chartData);
         fnDrawChart();
     });
 }
 
 function fnLoadEpicData() {
-  $("#epic-story-details").hide();
-  $("#epic-details").fadeIn(800);
+    $("#epic-story-details").hide();
+    $("#epic-details").fadeIn(800);
     $.getJSON("mock/epicDetails.json", function(data) {
         fnDrawLineBubbleChart(data.data);
         fnChangeTitle();
@@ -39,13 +40,26 @@ function fnLoadEpicStoryData() {
     setTimeout(dealyedLoad, 3000);
 }
 
-function dealyedLoad () {
-  $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
-  //$.getJSON("mock/epicStoryDetails.json", function(data) {
-    console.log(data)
-      fnDrawEpicStoryLineBubbleChart(data);
-  });
+function filterData(arr) {
+    var filteredArr = arr.filter(function(item) {
+        return item !== null;
+    })
+
+    return filteredArr;
 }
+
+function dealyedLoad() {
+    $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
+        //$.getJSON("mock/epicStoryDetails.json", function(data) {
+        console.log(data)
+        var chartData = {
+            'epics': data.epics,
+            'data': filterData(data.data)
+        }
+        fnDrawEpicStoryLineBubbleChart(chartData);
+    });
+}
+
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
         $('circle').removeClass("darken");
@@ -80,7 +94,7 @@ function fnAddId(objRef) {
 }
 
 function fnChangeTitle() {
-  $("#epic-details .highcharts-yaxis-labels tspan").html("Story Count");
+    $("#epic-details .highcharts-yaxis-labels tspan").html("Story Count");
 }
 
 function fnShowEpicDetails(id) {

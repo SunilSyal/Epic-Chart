@@ -1,6 +1,6 @@
 function fnDrawEpicStoryLineBubbleChart(chartData) {
     var release = chartData.epics;
-    var names = ["not started", "Development", "Pulp", "SIT", "Ready for production", "Rejected", "Reopned", "Done", "Others"]
+    var names = ["Not started", "Development", "Pulp", "SIT", "Ready for production", "Rejected", "Reopned", "Done", "Misc"]
 
     $('.bubble-chart-medium').height('1200px')
     $('#epic-story-bubble').highcharts({
