@@ -22,7 +22,9 @@ function fnLoadData() {
         window.chartData = filterData(data.data);
         fnAddId(window.chartData);
         fnDrawChart();
-    });
+    }).error(function() {
+        fnLoadData()
+    })
 }
 
 function fnLoadEpicData() {
@@ -57,7 +59,9 @@ function dealyedLoad() {
             'data': filterData(data.data)
         }
         fnDrawEpicStoryLineBubbleChart(chartData);
-    });
+    }).error(function() {
+        dealyedLoad()
+    })
 }
 
 function fnDefineEvents() {
