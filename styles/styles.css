@@ -33,21 +33,17 @@
     margin: 0px auto 30px;
     text-align: center;
   }
-
   .panel {
     border-radius: 0px;
     font-size: 14px;
     text-align: center;
   }
-
   .chart-holder {
     margin: 0 auto;
   }
-
-  .panel .panel-heading{
+  .panel .panel-heading {
     border-radius: 0px;
   }
-
   .epic-stories--chart {
     display: none;
   }
@@ -92,7 +88,6 @@
   .epic-link span {
     font-weight: bold;
   }
-
   #epic-story-details {
     display: none;
   }
@@ -102,9 +97,7 @@
   .legends span:last-child {
     margin-right: 0;
   }
-
-
-.glyphicon {
+  .glyphicon {
     display: inline-block;
     margin-right: 10px;
   }
@@ -140,15 +133,12 @@
   #epic-story-bubble circle {
     opacity: .8;
   }
-
   #epic-story-bubble rect {
     stroke: none;
   }
-
   #epic-story-bubble .highcharts-axis-line {
     display: none;
   }
-
   tspan {
     font-weight: bold;
   }
@@ -183,7 +173,6 @@
     /* background: #009688; */
     margin-right: 5px;
   }
-
   .tooltip-noborder .tooltip-stories {
     margin-top: 10px;
     margin-left: 4px;
@@ -198,6 +187,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 200px;
+  }
+  .btn:focus {
+    outline: none;
   }
   #epic-details {
     display: none;
