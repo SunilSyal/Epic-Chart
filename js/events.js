@@ -6,6 +6,7 @@ function fnInit() {
     fnDefineTemplates();
     fnLoadData();
     fnDefineEvents();
+    fnLoadEpicStoryData();
 }
 
 function fnDefineTemplates() {
@@ -20,6 +21,7 @@ function fnLoadData() {
         console.log('-----', data);
 
         window.chartData = filterData(data.data);
+        //window.chartData = changeColour(window.chartData);
         fnAddId(window.chartData);
         fnDrawChart();
     }).error(function() {
@@ -27,6 +29,7 @@ function fnLoadData() {
     })
 }
 
+/*
 function fnLoadEpicData() {
     $("#epic-story-details").hide();
     $("#epic-details").fadeIn(800);
@@ -34,12 +37,26 @@ function fnLoadEpicData() {
         fnDrawLineBubbleChart(data.data);
         fnChangeTitle();
     });
-}
+}*/
 
 function fnLoadEpicStoryData() {
     $("#epic-details").hide();
     $("#epic-story-details").fadeIn(800);
-    setTimeout(dealyedLoad, 3000);
+    setTimeout(fnDelayedLoad, 5000);
+}
+
+function fnDelayedLoad() {
+    $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
+        //$.getJSON("mock/epicStoryDetails.json", function(data) {
+        console.log(data)
+        var chartData = {
+            'epics': data.epics,
+            'data': filterData(data.data)
+        }
+        fnDrawEpicStoryLineBubbleChart(chartData);
+    }).error(function() {
+        fnDelayedLoad()
+    })
 }
 
 function filterData(arr) {
@@ -50,19 +67,17 @@ function filterData(arr) {
     return filteredArr;
 }
 
-function dealyedLoad() {
-    $.getJSON("https://msepictracker.herokuapp.com/epictracker/stories", function(data) {
-        //$.getJSON("mock/epicStoryDetails.json", function(data) {
-        console.log(data)
-        var chartData = {
-            'epics': data.epics,
-            'data': filterData(data.data)
-        }
-        fnDrawEpicStoryLineBubbleChart(chartData);
-    }).error(function() {
-        dealyedLoad()
-    })
+function changeColour(arr) {
+  var filteredArr = arr.filter(function(item) {
+      if(item.color == 'blue') {
+        item.color = 'green';
+      }
+      return item !== null;
+  })
+
+  return filteredArr;
 }
+
 
 function fnDefineEvents() {
     $('body').on("mouseenter", "circle", function(event) {
@@ -80,6 +95,7 @@ function fnDefineEvents() {
     $('body').on("click", "#container circle", function(event) {
         //fnShowEpicDetails($(event.target).attr('id'));
         //fnLoadEpicData();
+        openJira($(event.target).attr('id'));
     });
 
     $('.epic-link').on("click", function(event) {
@@ -87,7 +103,14 @@ function fnDefineEvents() {
         fnLoadEpicStoryData();
     });
 
-    $('.epic-link').click();
+    $('.main-menu .btn').on("click", function(event) {
+        $('.main-menu .btn').removeClass('btn-danger');
+        $(this).addClass('btn-danger');
+
+        $('.chart-holder').hide();
+        $('.' + $(this).attr('id') + '--chart').show();
+    });
+
 }
 
 function fnAddId(objRef) {
@@ -109,4 +132,10 @@ function fnShowEpicDetails(id) {
     $(".epic-details__url").html(window.chartData[index].url);
     $(".epic-details__date-created").html(window.chartData[index].creationDate);
     $(".epic-details__url").attr('href', window.chartData[index].url);
+}
+
+function openJira(id) {
+    var index = id.split("id_")[1];
+    var win = window.open(window.chartData[index].url, '_blank');
+    win.focus();
 }

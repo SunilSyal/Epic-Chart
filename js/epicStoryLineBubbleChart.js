@@ -2,7 +2,7 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
     var release = chartData.epics;
     var names = ["Not started", "Development", "Pulp", "SIT", "Ready for production", "Rejected", "Reopned", "Done", "Misc"]
 
-    $('.bubble-chart-medium').height('1200px')
+    $('.bubble-chart-medium').height('1500px')
     $('#epic-story-bubble').highcharts({
 
         chart: {
@@ -60,7 +60,7 @@ function fnDrawEpicStoryLineBubbleChart(chartData) {
             endOnTick: false,
             gridLineDashStyle: 'ShortDot',
             title: {
-                text: 'Story count'
+                text: ''
             },
             labels: {
                 formatter: function() {
