@@ -13,7 +13,7 @@ function fnDrawChart() {
         },
 
         title: {
-            text: 'EPIC Timeline View'
+            text: 'EPIC Timeline'
         },
 
         subtitle: {
@@ -26,7 +26,7 @@ function fnDrawChart() {
             startOnTick: true,
             gridLineDashStyle: 'ShortDot',
             title: {
-                text: 'Epic State'
+                text: ''
             },
             labels: {
                 formatter: function() {

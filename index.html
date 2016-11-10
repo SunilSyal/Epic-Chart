@@ -1,65 +1,88 @@
 <html>
 
 <head>
+
+  <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="styles/styles.css" type="text/css" rel="stylesheet" />
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/highchart.js"></script>
   <script src="js/highcharts-more.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="js/main.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-  <div id="container" class="container chart">
-    <div class="loader">
-      <img src="images/loader.gif"></img>
-      <p>We are processing a lot of data...It may take a few secs.</p>
+  <header>
+    <p>Jira Vision</p>
+
+    <div class="main-menu">
+      <button id="epic-main" type="button" class="btn btn-danger"> <span class="glyphicon glyphicon-random"></span>Epic Timeline</button>
+      <button id="epic-stories" type="button" class="btn"> <span class="glyphicon glyphicon-transfer"></span>Stories Progress</button>
     </div>
-  </div>
+  </header>
 
-  <div class="epic-link">
-    <p>Click here to see <span>Epic - Story Level View</span>
-  </div>
+  <div class="content">
+    <div class="chart-holder epic-main--chart">
 
-  <div id="epic-story-details" class="container epic-details">
-    <div class="epic-details__title-holder">
-      <p class="epic-details__title">Where are stories placed:</p>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-random"></span>Epic Timeline - Age of epics and relative position in current state
+        </div>
+      </div>
+
+      <div id="container" class="container chart">
+        <div class="loader">
+          <img src="images/loader.gif"></img>
+          <p>We are processing a lot of data...It may take a few secs.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="legends legends-left">
-      <p><span>S1 - Analysis</span>
-        <span>S2 - Development</span>
-        <span>S3 - Pulp</span>
-        <span>S4 - SIT</span>
-        <span>S5 - Rejected</span>
-        <span>S6 - Reopned</span>
-        <span>S7 - Ready for Prod</P>
+    <div class="epic-link">
+      <p>Click here to see <span>Epic - Story Level View</span>
     </div>
 
-    <div id="epic-story-bubble" class="container chart bubble-chart bubble-chart-medium">
-      <div class="loader">
-        <img src="images/loader.gif"></img>
-        <p>If it takes more than 30 secs, reload the page.</p>
+
+    <div class="chart-holder epic-stories--chart">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-transfer"></span>Stories Progress - Number of stories placed at different states for en epic
+        </div>
+      </div>
+
+      <div id="epic-story-bubble" class="container chart bubble-chart bubble-chart-medium">
+        <div class="loader">
+          <img src="images/loader.gif"></img>
+          <p>If it takes more than 30 secs, reload the page.</p>
+        </div>
       </div>
     </div>
 
 
-  </div>
+    <div id="epic-story-details" class="container epic-details ">
 
-  <div id="epic-details" class="container epic-details">
-    <div class="epic-details__title-holder">
-      <p class="epic-details__title-text"></p>
+
+
+
     </div>
 
-    <div class="legends legends-left">
-      <p><span>S1 - Analysis</span>
-        <span>S2 - Development</span>
-        <span>S3 - Pulp</span>
-        <span>S4 - SIT</span>
-        <span>S5 - Rejected</span>
-        <span>S6 - Reopned</span>
-        <span>S7 - Ready for Prod</P>
+    <div id="epic-details" class="container epic-details">
+      <div class="epic-details__title-holder">
+        <p class="epic-details__title-text"></p>
+      </div>
+
+      <div class="legends legends-left">
+        <p><span>S1 - Analysis</span>
+          <span>S2 - Development</span>
+          <span>S3 - Pulp</span>
+          <span>S4 - SIT</span>
+          <span>S5 - Rejected</span>
+          <span>S6 - Reopned</span>
+          <span>S7 - Ready for Prod</P>
     </div>
 
     <div id="line-bubble" class="container chart bubble-chart"></div>
@@ -68,21 +91,23 @@
 
     <div class="epic-details__holder">
       <p>Stories count: <span class="epic-details__stories-count"></span></p>
-    </div>
+      </div>
 
-    <div class="epic-details__holder">
-      <p>Date created: <span class="epic-details__date-created"></span></p>
-    </div>
+      <div class="epic-details__holder">
+        <p>Date created: <span class="epic-details__date-created"></span></p>
+      </div>
 
-    <div class="epic-details__holder">
-      <p>JIRA:
-        <a target="_blank" class="epic-details__url"></a>
-      </p>
-    </div>
+      <div class="epic-details__holder">
+        <p>JIRA:
+          <a target="_blank" class="epic-details__url"></a>
+        </p>
+      </div>
 
-    <div class="epic-details__holder">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <div class="epic-details__holder">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      </div>
+
     </div>
 
   </div>
